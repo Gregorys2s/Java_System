@@ -27,15 +27,19 @@ public class Pagamentos {
     public void setlucroDiario(double lucroDiario) {
         this.lucroDiario = lucroDiario;
     }
-    
-    public double pagar(String nomeProduto,int quantidade,double valor)
-    {
-        double vendido = 0;
-        vendido = quantidade * valor;
-        System.out.println(nomeProduto + " quantidade: " + quantidade + " X " + valor + " = " + vendido);
-        vendas.add(vendido);
-        return vendido;
+
+    public double pagar(int numId, List<Produto> produto, int quantidade) {
+
+        for (Produto p : produto) {
+
+            if (p.getId() == numId) {
+                double vendido = 0;
+                vendido = quantidade * p.getPreco();
+                System.out.println(p.getNome() + " quantidade: " + quantidade + " X " + p.getPreco() + " = " + vendido);
+                vendas.add(vendido);
+                return vendido;
+            }
+        }
+        return 0;
     }
-
-
 }

@@ -2,6 +2,7 @@ package com.github.Gregorys2s;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -13,6 +14,7 @@ public class Main {
         List<Carrinho> carrinho = new ArrayList<>();
         Pagamentos pagamento = new Pagamentos(new ArrayList<>(), 0);
         List<Produto> produto = new ArrayList<>();
+        Estoque estoque = new Estoque();
 
             cliente.add(new Cliente(1, "Gregory","Rua alameda manganes"));
             cliente.add(new Cliente(2, "Maria Silva", "Avenida Brasil"));
@@ -22,22 +24,14 @@ public class Main {
             cliente.add(new Cliente(6, "Fernanda Lima", "Rua Marechal Deodoro"));
             cliente.add(new Cliente(7, "Lucas Ferreira", "Avenida JK"));
 
-            produto.add(new Produto(1, "Arroz 5kg", 28.90));
-            produto.add(new Produto(2, "Feijão 1kg", 8.50));
-            produto.add(new Produto(3, "Macarrão", 4.75));
-            produto.add(new Produto(4, "Óleo de Soja", 6.99));
-            produto.add(new Produto(5, "Leite Integral", 5.49));
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Digite o id do produto");
+            int numero = sc.nextInt();
+            sc.nextLine();
+            System.out.println("Digite a quantidade desejada");
+            int quantidade = sc.nextInt();
 
-            for (Produto p : produto)
-            {
-
-                if(p.getId() == numId)
-                {
-                    pagamento.pagar(p.getNome(),2,p.getPreco());
-                    numId++;
-                }
-            }
-
+            pagamento.pagar(numero,estoque.getProdutos(),quantidade);
 
     }
 }
