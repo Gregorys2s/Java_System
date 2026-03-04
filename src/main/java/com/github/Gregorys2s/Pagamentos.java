@@ -28,18 +28,14 @@ public class Pagamentos {
         this.lucroDiario = lucroDiario;
     }
 
-    public double pagar(int numId, List<Produto> produto, int quantidade) {
-
-        for (Produto p : produto) {
-
-            if (p.getId() == numId) {
+    public double pagar(int numId,Produto produto, int quantidade) {
+            if (produto.getId() == numId) {
                 double vendido = 0;
-                vendido = quantidade * p.getPreco();
-                System.out.println(p.getNome() + " quantidade: " + quantidade + " X " + p.getPreco() + " = " + vendido);
+                vendido = quantidade * produto.getPreco();
+                System.out.println(produto.getNome() + " quantidade: " + quantidade + " X " + produto.getPreco() + " = " + vendido);
                 vendas.add(vendido);
                 return vendido;
             }
-        }
         return 0;
     }
 }

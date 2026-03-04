@@ -11,6 +11,14 @@ public class Cliente {
         this.endereco = endereco;
     }
 
+    /*cliente.add(new Cliente(1, "Gregory","Rua alameda manganes"));
+            cliente.add(new Cliente(2, "Maria Silva", "Avenida Brasil"));
+            cliente.add(new Cliente(3, "João Pereira", "Avenida Jorge Schimmelpfeng"));
+            cliente.add(new Cliente(4, "Ana Souza", "Rua Tarobá"));
+            cliente.add(new Cliente(5, "Carlos Mendes", "Avenida Paraná"));
+            cliente.add(new Cliente(6, "Fernanda Lima", "Rua Marechal Deodoro"));
+            cliente.add(new Cliente(7, "Lucas Ferreira", "Avenida JK"));*/
+
     public int getId() {
         return id;
     }
