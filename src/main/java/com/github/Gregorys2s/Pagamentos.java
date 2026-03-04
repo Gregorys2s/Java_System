@@ -27,15 +27,4 @@ public class Pagamentos {
     public void setlucroDiario(double lucroDiario) {
         this.lucroDiario = lucroDiario;
     }
-
-    public double pagar(int numId,Produto produto, int quantidade) {
-            if (produto.getId() == numId) {
-                double vendido = 0;
-                vendido = quantidade * produto.getPreco();
-                System.out.println(produto.getNome() + " quantidade: " + quantidade + " X " + produto.getPreco() + " = " + vendido);
-                vendas.add(vendido);
-                return vendido;
-            }
-        return 0;
-    }
 }

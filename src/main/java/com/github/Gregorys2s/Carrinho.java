@@ -4,11 +4,17 @@ import java.util.List;
 
 public class Carrinho {
     private List<Cliente> clientel;
-    private List<Produto> produto;
+    private List<ItemCarrinho> produto;
 
-    public Carrinho(List<Cliente> clientel, List<Produto> produto) {
+    public Carrinho(List<Cliente> clientel, List<ItemCarrinho> produto) {
         this.clientel = clientel;
         this.produto = produto;
+    }
+
+    public void adicionarCarrinho(Produto produto,int quantidade)
+    {
+       ItemCarrinho item = new ItemCarrinho(produto,quantidade);
+        this.produto.add(item);
     }
 
     public List<Cliente> getClientel() {
@@ -19,11 +25,14 @@ public class Carrinho {
         this.clientel = clientel;
     }
 
-    public List<Produto> getProduto() {
+    public List<ItemCarrinho> getProduto() {
         return produto;
     }
 
-    public void setProduto(List<Produto> produto) {
+    public void setProduto(List<ItemCarrinho> produto) {
         this.produto = produto;
     }
 }
+
+
+
